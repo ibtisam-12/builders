@@ -1,0 +1,13 @@
+<!-- ecommerce/templates/ecommerce/product_detail.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2>{{ product.name }}</h2>
+        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        <p>{{ product.description }}</p>
+        <p><strong>Price: </strong>${{ product.price }}</p>
+        <p><strong>In Stock: </strong>{{ product.is_in_stock }}</p>
+        <a href="{% url 'add_to_cart' product.slug %}" class="btn btn-success">Add to Cart</a>
+    </div>
+{% endblock %}
